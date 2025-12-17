@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoPreservar - Consultoria Ambiental e Fundiária</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green-dark': '#2D5A27',
+                        'brand-green-light': '#6AB13F',
+                        'brand-bg': '#f7f7f7',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #f7f7f7; }
+        .glass-nav {
+            background: rgba(247, 247, 247, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #2D5A27, #6AB13F);
+            -webkit-background-clip: text; /* Prefixo para Chrome/Safari/Edge */
+            background-clip: text;         /* Propriedade padrão (Resolve o erro) */
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #2D5A27 0%, #3e7a36 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(45, 90, 39, 0.2);
+        }
+        .card-service {
+            background: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-service:hover {
+            transform: translateY(-10px);
+            border-color: #6AB13F;
+        }
+        /* Ajuste para menu mobile */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-200">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+            <a href="#home">
+                <img src="static/img/logo_geopreservar_sem_fundo.png" alt="GeoPreservar" class="h-10 md:h-16">
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center text-sm font-semibold uppercase tracking-wider">
+                <a href="#servicos" class="hover:text-brand-green-light transition">Serviços</a>
+                <a href="#especialista" class="hover:text-brand-green-light transition">O Especialista</a>
+                <a href="#contato" class="hover:text-brand-green-light transition">Contato</a>
+                <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista" 
+                   class="btn-primary text-white px-6 py-2 rounded-full">
+                    Falar agora
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-brand-green-dark p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 py-6 px-6">
+            <div class="flex flex-col space-y-4 font-semibold text-sm uppercase tracking-wider">
+                <a href="#servicos" class="mobile-link py-2 border-b border-gray-50">Serviços</a>
+                <a href="#especialista" class="mobile-link py-2 border-b border-gray-50">O Especialista</a>
+                <a href="#contato" class="mobile-link py-2 border-b border-gray-50">Contato</a>
+                <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista" 
+                   class="btn-primary text-white px-6 py-3 rounded-xl text-center">
+                    Falar agora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 md:pt-32 pb-12 md:pb-20 overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-3/5 z-10 text-center md:text-left" data-aos="fade-right">
+                <span class="inline-block px-4 py-1 rounded-full bg-green-100 text-brand-green-dark text-[10px] md:text-xs font-bold mb-4 uppercase tracking-widest">
+                    Consultoria Fundiária & Ambiental
+                </span>
+                <h1 class="text-3xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6 px-2 md:px-0">
+                    Líder em <span class="gradient-text">Georreferenciamento e CAR.</span>
+                </h1>
+                <p class="text-base md:text-lg text-slate-600 mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed px-4 md:px-0">
+                    Especialistas em certificação de imóveis rurais e gestão ambiental estratégica. Garanta a conformidade legal da sua terra com quem entende do campo.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 px-6 md:px-0">
+                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" class="btn-primary text-white px-8 py-4 rounded-xl font-bold text-lg">
+                        Solicitar Orçamento
+                    </a>
+                    <a href="#servicos" class="bg-white border-2 border-brand-green-dark text-brand-green-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition">
+                        Nossos Serviços
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-2/5 mt-12 md:mt-0 relative" data-aos="fade-left">
+                <div class="absolute -z-10 w-full h-full bg-green-200/50 rounded-full blur-3xl scale-125 top-0 left-0"></div>
+                <img src="static/img/ronex_geopreservar.png" alt="Ronex Jesus - Especialista" class="w-4/5 md:w-full h-auto mx-auto drop-shadow-2xl grayscale hover:grayscale-0 transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Detalhados -->
+    <section id="servicos" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl md:text-4xl font-extrabold text-slate-900 mb-4">Soluções Completas para o Campo</h2>
+                <div class="w-20 md:w-24 h-1.5 bg-brand-green-light mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Georreferenciamento -->
+                <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
+                        <i class="fa-solid fa-satellite text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4">Georreferenciamento de Imóveis Rurais</h3>
+                    <ul class="text-slate-600 mb-8 text-xs md:text-sm space-y-2 flex-grow">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Levantamento em campo dos limites da propriedade</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Processamento de dados de alta precisão</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Relatório Técnico de Georreferenciamento</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Elaboração de peças técnicas</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Memorial Descritivo certificado pelo INCRA</li>
+                    </ul>
+                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20Georreferenciamento" 
+                       class="mt-auto w-full py-3 text-center rounded-xl font-bold bg-slate-50 text-brand-green-dark hover:bg-brand-green-dark hover:text-white transition">
+                        Solicitar Orçamento <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- CAR -->
+                <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
+                        <i class="fa-solid fa-earth-americas text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4">Cadastro Ambiental Rural (CAR)</h3>
+                    <ul class="text-slate-600 mb-8 text-xs md:text-sm space-y-2 flex-grow">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Elaboração do Cadastro Ambiental Rural (CAR)</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Retificação e Correção Ambiental</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Aprovação do Cadastro junto aos órgãos</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-green-light mt-1 mr-2 text-[10px]"></i> Definição de passivos ambientais na área</li>
+                    </ul>
+                    <a href="https://wa.me/559191054758?text=Olá,%20preciso%20regularizar%20meu%20CAR%20ou%20corrigir%20pendências" 
+                       class="mt-auto w-full py-3 text-center rounded-xl font-bold bg-slate-50 text-brand-green-dark hover:bg-brand-green-dark hover:text-white transition">
+                        Regularizar CAR <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- ITR e Documentação -->
+                <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
+                        <i class="fa-solid fa-file-invoice-dollar text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4">ITR, CCIR e Regularização</h3>
+                    <p class="text-slate-600 mb-8 text-xs md:text-sm leading-relaxed flex-grow">
+                        Gestão anual obrigatória para manter a produtividade jurídica da terra. Elaboramos declarações de ITR e CCIR, garantindo que sua propriedade nunca fique bloqueada para financiamentos.
+                    </p>
+                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20regularizar%20meu%20ITR%20e%20CCIR" 
+                       class="mt-auto w-full py-3 text-center rounded-xl font-bold bg-slate-50 text-brand-green-dark hover:bg-brand-green-dark hover:text-white transition">
+                        Falar sobre ITR <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Licenciamento -->
+                <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
+                        <i class="fa-solid fa-leaf text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4">Licenciamento Ambiental</h3>
+                    <p class="text-slate-600 mb-8 text-xs md:text-sm leading-relaxed flex-grow">
+                        Consultoria completa para emissão de licenças (LP, LI, LO). Análise de condicionantes e interlocução com órgãos ambientais (SEMAS/IBAMA) para viabilizar seu empreendimento.
+                    </p>
+                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20saber%20mais%20detalhes%20sobre%20Licenciamento%20Ambiental" 
+                       class="mt-auto w-full py-3 text-center rounded-xl font-bold bg-slate-50 text-brand-green-dark hover:bg-brand-green-dark hover:text-white transition">
+                        Consultar Viabilidade <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Regularização Fundiária -->
+                <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
+                        <i class="fa-solid fa-map-location-dot text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4">Regularização Fundiária</h3>
+                    <p class="text-slate-600 mb-8 text-xs md:text-sm leading-relaxed flex-grow">
+                        Vistoria Agronômica - ITERPA, análise de PRODES e outros monitoramentos espaciais. Transformamos áreas rurais em ativos legalizados e seguros.
+                    </p>
+                    <a href="https://wa.me/559191054758?text=Olá,%20preciso%20de%20ajuda%20com%20Regularização%20Fundiária%20e%20ITERPA" 
+                       class="mt-auto w-full py-3 text-center rounded-xl font-bold bg-slate-50 text-brand-green-dark hover:bg-brand-green-dark hover:text-white transition">
+                        Agendar Análise <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Crédito Rural -->
+                <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
+                        <i class="fa-solid fa-piggy-bank text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4">Projetos de Crédito Rural</h3>
+                    <p class="text-slate-600 mb-8 text-xs md:text-sm leading-relaxed flex-grow">
+                        Elaboração de projetos técnicos para acesso a linhas de financiamento como PRONAF, FNO e ABC. Auxiliamos desde o diagnóstico socioeconômico até a aprovação bancária.
+                    </p>
+                    <a href="https://wa.me/559191054758?text=Olá,%20tenho%20interesse%20em%20elaboração%20de%20projeto%20para%20crédito%20rural" 
+                       class="mt-auto w-full py-3 text-center rounded-xl font-bold bg-slate-50 text-brand-green-dark hover:bg-brand-green-dark hover:text-white transition">
+                        Falar sobre Crédito <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Especialista (Qualificações de Ronex) -->
+    <section id="especialista" class="py-16 md:py-24 bg-brand-bg">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div class="w-full md:w-1/2" data-aos="zoom-in">
+                    <div class="relative inline-block w-full">
+                        <img src="static/img/ronex_geopreservar_rtk.png" alt="Ronex Jesus" class="rounded-3xl shadow-2xl relative z-10 w-full max-w-[280px] md:max-w-sm mx-auto">
+                        <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-full h-full border-4 border-brand-green-light rounded-3xl -z-10 max-w-[280px] md:max-w-sm left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0"></div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-left">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Ronex Santos de Jesus</h2>
+                    <p class="text-brand-green-dark font-bold mb-4 uppercase tracking-widest text-[10px] md:text-sm">
+                        Analista Ambiental & Especialista em Geotecnologias
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                        Com mais de <strong>20 anos de experiência</strong>, Ronex Jesus é especialista na interface entre produtividade rural e conformidade legal. Sua expertise foi consolidada em 5 anos de atuação direta na <strong>SEMAS-PA</strong>, garantindo domínio total sobre processos de regularização no Estado do Pará.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-8 text-left max-w-sm mx-auto md:mx-0">
+                        <ul class="space-y-2">
+                            <li class="flex items-start text-[11px] md:text-xs text-slate-700">
+                                <i class="fa-solid fa-circle-check text-brand-green-light mt-0.5 mr-2"></i> Georreferenciamento
+                            </li>
+                            <li class="flex items-start text-[11px] md:text-xs text-slate-700">
+                                <i class="fa-solid fa-circle-check text-brand-green-light mt-0.5 mr-2"></i> Licenciamento Ambiental
+                            </li>
+                            <li class="flex items-start text-[11px] md:text-xs text-slate-700">
+                                <i class="fa-solid fa-circle-check text-brand-green-light mt-0.5 mr-2"></i> CAR, PRA, CCIR, ITR
+                            </li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li class="flex items-start text-[11px] md:text-xs text-slate-700">
+                                <i class="fa-solid fa-circle-check text-brand-green-light mt-0.5 mr-2"></i> Vistoria - ITERPA
+                            </li>
+                            <li class="flex items-start text-[11px] md:text-xs text-slate-700">
+                                <i class="fa-solid fa-circle-check text-brand-green-light mt-0.5 mr-2"></i> Análise de Satélite
+                            </li>
+                            <li class="flex items-start text-[11px] md:text-xs text-slate-700">
+                                <i class="fa-solid fa-circle-check text-brand-green-light mt-0.5 mr-2"></i> Crédito Rural
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/559191054758?text=Olá%20Ronex,%20vi%20suas%20especializações%20e%20gostaria%20de%20uma%20consultoria" class="btn-primary text-white px-8 py-4 rounded-xl font-bold inline-block w-full sm:w-auto">
+                        Consultar Especialista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action General -->
+    <section class="py-12 md:py-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="bg-brand-green-dark rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 text-white relative overflow-hidden shadow-2xl">
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+                    <div class="md:w-2/3 mb-8 md:mb-0">
+                        <h2 class="text-2xl md:text-5xl font-extrabold mb-4 leading-tight">Sua terra, 100% regularizada.</h2>
+                        <p class="text-sm md:text-lg opacity-80 leading-relaxed max-w-xl text-green-50">
+                            Não corra riscos jurídicos ou ambientais. Nossa consultoria garante o Georreferenciamento preciso e o CAR aprovado para sua propriedade.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20iniciar%20a%20regularização%20da%20minha%20área" class="bg-white text-brand-green-dark px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-green-50 transition w-full md:w-auto">
+                        INICIAR CONSULTORIA
+                    </a>
+                </div>
+                <!-- Decoração circular -->
+                <div class="absolute -top-20 -right-20 w-48 h-48 md:w-80 md:h-80 bg-white/10 rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-white pt-16 pb-10 border-t border-gray-100">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div class="text-center sm:text-left">
+                    <img src="static/img/logo_geopreservar_sem_fundo.png" alt="Logo" class="h-12 md:h-16 mb-6 mx-auto sm:mx-0">
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">
+                        Segurança e agilidade na regularização da sua propriedade rural. Consultoria especializada em Geotecnologias e Meio Ambiente.
+                    </p>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="font-bold text-slate-900 mb-6">Menu</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><a href="#home" class="hover:text-brand-green-light">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-green-light">Serviços</a></li>
+                        <li><a href="#especialista" class="hover:text-brand-green-light">O Especialista</a></li>
+                    </ul>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="font-bold text-slate-900 mb-6">Contato</h4>
+                    <ul class="space-y-4 text-xs md:text-sm text-slate-500">
+                        <li class="flex items-center justify-center sm:justify-start">
+                            <i class="fa-solid fa-phone w-6 text-brand-green-light"></i> (91) 99105-4758
+                        </li>
+                        <li class="flex items-center justify-center sm:justify-start">
+                            <i class="fa-solid fa-phone w-6 text-brand-green-light"></i> (91) 98294-7179
+                        </li>
+                        <li class="flex items-center justify-center sm:justify-start">
+                            <i class="fa-solid fa-envelope w-6 text-brand-green-light"></i> ronexjesusj@bol.com.br
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="font-bold text-slate-900 mb-6">Redes Sociais</h4>
+                    <div class="flex justify-center sm:justify-start space-x-4">
+                        <a href="https://www.linkedin.com/in/ronex-jesus-/" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-brand-green-dark hover:text-white transition">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-brand-green-dark hover:text-white transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 pt-8 text-center px-4">
+                <p class="text-slate-400 text-[10px] md:text-xs">
+                    &copy; 2025 GeoPreservar - Consultoria Ambiental e Fundiária. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista" 
+       class="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
+        <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-quad'
+        });
+
+        // Script para menu mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu ao clicar em um link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
