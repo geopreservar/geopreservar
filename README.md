@@ -4,8 +4,8 @@ Landing page profissional desenvolvida para a **GeoPreservar**, empresa especial
 
 ## Demonstração Live
 
-O projeto está renderizado e disponível para visualização em:
-**[https://samuel-c-santos.github.io/geopreservar/](https://www.google.com/url?sa=E&source=gmail&q=https://samuel-c-santos.github.io/geopreservar/)**
+O projeto está renderizado e disponível para visualização em:  
+**[https://geopreservar.github.io/geopreservar/](https://geopreservar.github.io/geopreservar/)**
 
 ---
 
