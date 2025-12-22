@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" prefix="og: http://ogp.me/ns#">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://geopreservar.github.io/geopreservar/">
+
     <meta property="og:site_name" content="GeoPreservar">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
@@ -20,18 +25,16 @@
     <meta name="twitter:description" content="Líder em Georreferenciamento, CAR e Regularização Ambiental no Pará.">
     <meta name="twitter:image" content="https://geopreservar.github.io/geopreservar/thumbnail.jpg">
 
+    <meta name="theme-color" content="#2D5A27">
+
     <title>GeoPreservar - Consultoria Ambiental e Fundiária</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- AOS (Animate on Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script>
@@ -60,8 +63,8 @@
         }
         .gradient-text {
             background: linear-gradient(90deg, #2D5A27, #6AB13F);
-            -webkit-background-clip: text; /* Prefixo para Chrome/Safari/Edge */
-            background-clip: text;         /* Propriedade padrão (Resolve o erro) */
+            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .btn-primary {
@@ -80,25 +83,19 @@
             transform: translateY(-10px);
             border-color: #6AB13F;
         }
-        /* Ajuste para menu mobile */
         #mobile-menu {
             transition: transform 0.3s ease-in-out;
-        }
-        #mobile-menu.hidden {
-            display: none;
         }
     </style>
 </head>
 <body class="text-slate-800">
 
-    <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav border-b border-gray-200">
-        <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#home">
                 <img src="static/img/logo_geopreservar_sem_fundo.png" alt="GeoPreservar" class="h-10 md:h-16">
             </a>
             
-            <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 items-center text-sm font-semibold uppercase tracking-wider">
                 <a href="#servicos" class="hover:text-brand-green-light transition">Serviços</a>
                 <a href="#especialista" class="hover:text-brand-green-light transition">O Especialista</a>
@@ -109,13 +106,11 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="menu-toggle" class="md:hidden text-brand-green-dark p-2 focus:outline-none">
                 <i class="fa-solid fa-bars text-2xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Container -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 py-6 px-6">
             <div class="flex flex-col space-y-4 font-semibold text-sm uppercase tracking-wider">
                 <a href="#servicos" class="mobile-link py-2 border-b border-gray-50">Serviços</a>
@@ -129,24 +124,23 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-24 md:pt-32 pb-12 md:pb-20 overflow-hidden">
-        <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
+    <section id="home" class="pt-28 md:pt-40 pb-12 md:pb-24 overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
             <div class="w-full md:w-3/5 z-10 text-center md:text-left" data-aos="fade-right">
-                <span class="inline-block px-4 py-1 rounded-full bg-green-100 text-brand-green-dark text-[10px] md:text-xs font-bold mb-4 uppercase tracking-widest">
+                <span class="inline-block px-4 py-1 rounded-full bg-green-100 text-brand-green-dark text-[11px] md:text-xs font-bold mb-4 uppercase tracking-widest">
                     Consultoria Fundiária & Ambiental
                 </span>
-                <h1 class="text-3xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6 px-2 md:px-0">
+                <h1 class="text-4xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6 px-2 md:px-0">
                     Líder em <span class="gradient-text">Georreferenciamento e CAR.</span>
                 </h1>
-                <p class="text-base md:text-lg text-slate-600 mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed px-4 md:px-0">
+                <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed px-4 md:px-0">
                     Especialistas em certificação de imóveis rurais e gestão ambiental estratégica. Garanta a conformidade legal da sua terra com quem entende do campo.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 px-6 md:px-0">
-                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" class="btn-primary text-white px-8 py-4 rounded-xl font-bold text-lg">
+                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" class="btn-primary text-white px-8 py-4 rounded-xl font-bold text-lg text-center">
                         Solicitar Orçamento
                     </a>
-                    <a href="#servicos" class="bg-white border-2 border-brand-green-dark text-brand-green-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition">
+                    <a href="#servicos" class="bg-white border-2 border-brand-green-dark text-brand-green-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition text-center">
                         Nossos Serviços
                     </a>
                 </div>
@@ -160,16 +154,14 @@
         </div>
     </section>
 
-    <!-- Serviços Detalhados -->
     <section id="servicos" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 md:px-6">
+        <div class="container mx-auto px-6">
             <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
                 <h2 class="text-2xl md:text-4xl font-extrabold text-slate-900 mb-4">Soluções Completas para o Campo</h2>
                 <div class="w-20 md:w-24 h-1.5 bg-brand-green-light mx-auto rounded-full"></div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Georreferenciamento -->
                 <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up">
                     <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
                         <i class="fa-solid fa-satellite text-xl md:text-2xl"></i>
@@ -188,7 +180,6 @@
                     </a>
                 </div>
 
-                <!-- CAR -->
                 <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
                         <i class="fa-solid fa-earth-americas text-xl md:text-2xl"></i>
@@ -206,7 +197,6 @@
                     </a>
                 </div>
 
-                <!-- ITR e Documentação -->
                 <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
                         <i class="fa-solid fa-file-invoice-dollar text-xl md:text-2xl"></i>
@@ -221,7 +211,6 @@
                     </a>
                 </div>
 
-                <!-- Licenciamento -->
                 <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up">
                     <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
                         <i class="fa-solid fa-leaf text-xl md:text-2xl"></i>
@@ -236,7 +225,6 @@
                     </a>
                 </div>
 
-                <!-- Regularização Fundiária -->
                 <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
                         <i class="fa-solid fa-map-location-dot text-xl md:text-2xl"></i>
@@ -251,7 +239,6 @@
                     </a>
                 </div>
 
-                <!-- Crédito Rural -->
                 <div class="card-service p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-brand-green-dark">
                         <i class="fa-solid fa-piggy-bank text-xl md:text-2xl"></i>
@@ -269,9 +256,8 @@
         </div>
     </section>
 
-    <!-- O Especialista (Qualificações de Ronex) -->
     <section id="especialista" class="py-16 md:py-24 bg-brand-bg">
-        <div class="container mx-auto px-4 md:px-6">
+        <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
                 <div class="w-full md:w-1/2" data-aos="zoom-in">
                     <div class="relative inline-block w-full">
@@ -313,7 +299,7 @@
                         </ul>
                     </div>
 
-                    <a href="https://wa.me/559191054758?text=Olá%20Ronex,%20vi%20suas%20especializações%20e%20gostaria%20de%20uma%20consultoria" class="btn-primary text-white px-8 py-4 rounded-xl font-bold inline-block w-full sm:w-auto">
+                    <a href="https://wa.me/559191054758?text=Olá%20Ronex,%20vi%20suas%20especializações%20e%20gostaria%20de%20uma%20consultoria" class="btn-primary text-white px-8 py-4 rounded-xl font-bold inline-block w-full sm:w-auto text-center">
                         Consultar Especialista
                     </a>
                 </div>
@@ -321,9 +307,8 @@
         </div>
     </section>
 
-    <!-- Call to Action General -->
     <section class="py-12 md:py-16">
-        <div class="container mx-auto px-4 md:px-6">
+        <div class="container mx-auto px-6">
             <div class="bg-brand-green-dark rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 text-white relative overflow-hidden shadow-2xl">
                 <div class="relative z-10 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
                     <div class="md:w-2/3 mb-8 md:mb-0">
@@ -332,19 +317,17 @@
                             Não corra riscos jurídicos ou ambientais. Nossa consultoria garante o Georreferenciamento preciso e o CAR aprovado para sua propriedade.
                         </p>
                     </div>
-                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20iniciar%20a%20regularização%20da%20minha%20área" class="bg-white text-brand-green-dark px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-green-50 transition w-full md:w-auto">
+                    <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20iniciar%20a%20regularização%20da%20minha%20área" class="bg-white text-brand-green-dark px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-green-50 transition w-full md:w-auto text-center">
                         INICIAR CONSULTORIA
                     </a>
                 </div>
-                <!-- Decoração circular -->
                 <div class="absolute -top-20 -right-20 w-48 h-48 md:w-80 md:h-80 bg-white/10 rounded-full"></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contato" class="bg-white pt-16 pb-10 border-t border-gray-100">
-        <div class="container mx-auto px-4 md:px-6">
+        <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
                 <div class="text-center sm:text-left">
                     <img src="static/img/logo_geopreservar_sem_fundo.png" alt="Logo" class="h-12 md:h-16 mb-6 mx-auto sm:mx-0">
@@ -394,13 +377,11 @@
         </div>
     </footer>
 
-    <!-- Botão Flutuante WhatsApp -->
     <a href="https://wa.me/559191054758?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista" 
        class="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
         <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
     </a>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -409,17 +390,12 @@
             easing: 'ease-out-quad'
         });
 
-        // Script para menu mobile
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        // Fechar menu ao clicar em um link
-        mobileLinks.forEach(link => {
+        document.querySelectorAll('.mobile-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
