@@ -5,7 +5,7 @@ Landing page profissional desenvolvida para a **GeoPreservar**, empresa especial
 ## Demonstração Live
 
 O projeto está renderizado e disponível para visualização em:  
-**[https://geopreservar.github.io/geopreservar/](https://geopreservar.github.io/geopreservar/)**
+**[https://geopreservar.github.io/home/](https://geopreservar.github.io/home/)**
 
 ---
 
